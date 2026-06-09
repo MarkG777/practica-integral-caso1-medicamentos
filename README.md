@@ -68,7 +68,7 @@ Abrir `notebooks/eda_y_limpieza_contrataciones.ipynb` en Jupyter/VS Code y ejecu
 - Aplica limpieza textual avanzada con **expresiones regulares** (Regex).
 - Normaliza tipos de datos (fechas ISO, numéricos flotantes).
 - Descompone la tabla plana en **dimensiones y hechos** (esquema estrella).
-- Genera la **variable target predictiva** (`target_adjudicacion_directa`).
+- Genera la **variable target predictiva** (`target_costo_alto`: 1 si el monto total supera el percentil 75, es decir, $466.81).
 - Exporta el **particionamiento estratificado 75/25** (`train_dataset.csv`, `test_dataset.csv`).
 
 ### Paso 3 — Crear esquema estrella en PostgreSQL
@@ -95,7 +95,7 @@ python carga_dimensiones_hechos.py
 | **Tipado numérico** | Conversión de montos con comas a `NUMERIC(12,2)`. |
 | **Surrogate Keys** | Identificadores artificiales (`*_sk`) autoincrementales en cada dimensión. |
 | **Integridad referencial** | Llaves foráneas entre `fct_adquisiciones` y todas las dimensiones. |
-| **Target predictivo** | Variable binaria `target_adjudicacion_directa` derivada del tipo de contratación. |
+| **Target predictivo** | Variable binaria `target_costo_alto` (1 si total > percentil 75 = $466.81) para detectar adquisiciones anómalamente costosas. |
 
 ---
 

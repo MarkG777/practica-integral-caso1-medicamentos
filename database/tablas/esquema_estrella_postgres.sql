@@ -81,7 +81,7 @@ CREATE TABLE ecbd_caso1.fct_adquisiciones (
     cantidad        NUMERIC(12,2) NOT NULL CHECK (cantidad >= 0),
     precio_unitario NUMERIC(12,2) NOT NULL CHECK (precio_unitario >= 0),
     total           NUMERIC(12,2) NOT NULL CHECK (total >= 0),
-    target_adjudicacion_directa INTEGER NOT NULL CHECK (target_adjudicacion_directa IN (0,1))
+    target_costo_alto INTEGER NOT NULL CHECK (target_costo_alto IN (0,1))
 );
 
 -- -----------------------------------------------------
