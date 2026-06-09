@@ -1,0 +1,25 @@
+# Entorno virtual de Python
+venv/
+
+# Credenciales reales
+.env
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de IDEs
+.vscode/
+.idea/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Datasets intermedios (el crudo sí se sube, los auxiliares no)
+*.tmp
+*.bak
