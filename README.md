@@ -23,7 +23,9 @@ practica5_modelado_dimensional/
 │   └── eda_y_limpieza_contrataciones.ipynb   <- EDA, limpieza Regex, split Train/Test
 ├── database/
 │   ├── esquema_estrella_postgres.sql           <- DDL del esquema estrella
-│   └── carga_dimensiones_hechos.py             <- Pipeline E-L-T (carga a PostgreSQL)
+│   ├── carga_dimensiones_hechos.py             <- Pipeline E-L-T (carga a PostgreSQL)
+│   ├── generar_evidencias.py                   <- Genera capturas de PostgreSQL
+│   └── generar_reporte_pdf.py                  <- Genera el Reporte Técnico PDF
 ├── data/
 │   ├── adquisicion_medicamentos.csv            <- Dataset crudo original
 │   ├── dim_*.csv                               <- Dimensiones limpias
@@ -31,7 +33,8 @@ practica5_modelado_dimensional/
 │   ├── train_dataset.csv                       <- 75% estratificado
 │   └── test_dataset.csv                        <- 25% estratificado
 └── docs/
-    └── Reporte_Tecnico_Practica5.pdf             <- Entregable principal (REQUERIDO)
+    ├── Reporte_Tecnico_Practica5.pdf             <- Entregable principal (REQUERIDO)
+    └── evidencias/                               <- Capturas del pipeline en PostgreSQL
 ```
 
 ---

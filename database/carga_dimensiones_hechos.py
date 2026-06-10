@@ -28,11 +28,30 @@ def load_csv(name):
 print("[1/6] Cargando dimensiones desde CSV...")
 
 dim_tiempo = load_csv('dim_tiempo.csv')
-dim_medicamento = load_csv('dim_medicamento.csv')
-dim_proveedor = load_csv('dim_proveedor.csv')
+
+dim_medicamento = load_csv('dim_medicamento.csv').rename(columns={
+    'cncpt': 'nombre_comercial',
+    'sus_activ': 'sustancia_activa',
+    'forma_farma': 'forma_farmaceutica',
+    'cntcn': 'concentracion',
+    'prese': 'presentacion',
+})
+
+dim_proveedor = load_csv('dim_proveedor.csv').rename(columns={
+    'prov': 'nombre_proveedor',
+})
+
 dim_institucion = load_csv('dim_institucion.csv')
-dim_contratacion = load_csv('dim_contratacion.csv')
-fct = load_csv('fct_adquisiciones.csv')
+
+dim_contratacion = load_csv('dim_contratacion.csv').rename(columns={
+    'tipo_adqui': 'tipo_adquisicion',
+    'orign_recur': 'origen_recurso',
+})
+
+fct = load_csv('fct_adquisiciones.csv').rename(columns={
+    'canti': 'cantidad',
+    'prcio_unit': 'precio_unitario',
+})
 
 print("[2/6] Cargando dim_tiempo...")
 dim_tiempo.to_sql('dim_tiempo', engine, schema='ecbd_caso1', if_exists='append', index=False)
