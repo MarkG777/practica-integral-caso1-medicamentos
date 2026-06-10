@@ -23,9 +23,7 @@ practica5_modelado_dimensional/
 │   └── eda_y_limpieza_contrataciones.ipynb   <- EDA, limpieza Regex, split Train/Test
 ├── database/
 │   ├── esquema_estrella_postgres.sql           <- DDL del esquema estrella
-│   ├── carga_dimensiones_hechos.py             <- Pipeline E-L-T (carga a PostgreSQL)
-│   ├── generar_evidencias.py                   <- Genera capturas de PostgreSQL
-│   └── generar_reporte_pdf.py                  <- Genera el Reporte Técnico PDF
+│   └── carga_dimensiones_hechos.py             <- Pipeline E-L-T (carga a PostgreSQL)
 ├── data/
 │   ├── adquisicion_medicamentos.csv            <- Dataset crudo original
 │   ├── dim_*.csv                               <- Dimensiones limpias
@@ -117,7 +115,7 @@ python carga_dimensiones_hechos.py
 └──────────────┘    │  cantidad           │   └──────────┘
                     │  precio_unitario    │
 ┌──────────────┐    │  total              │   ┌──────────────┐
-│dim_institucion│    │  target_adjudic... │   │dim_contratacion│
+│dim_institucion│    │  target_costo_alto │   │dim_contratacion│
 │(institucion_sk)│   └──────────┬──────────┘   │(contratacion_sk)│
 └──────────────┘               │             └──────────────┘
                                │
@@ -131,7 +129,7 @@ python carga_dimensiones_hechos.py
 
 ## 7. Validación del Particionamiento
 
-El split 75/25 se genera con `train_test_split(..., stratify=y)` garantizando que la proporción de adjudicaciones directas se conserve idénticamente en ambos conjuntos.
+El split 75/25 se genera con `train_test_split(..., stratify=y)` garantizando que la proporción de costos altos se conserve idénticamente en ambos conjuntos.
 
 ---
 
