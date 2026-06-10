@@ -22,8 +22,7 @@ practica5_modelado_dimensional/
 ├── notebooks/
 │   └── eda_y_limpieza_contrataciones.ipynb   <- EDA, limpieza Regex, split Train/Test
 ├── database/
-│   ├── tablas/
-│   │   └── esquema_estrella_postgres.sql     <- DDL del esquema estrella
+│   ├── esquema_estrella_postgres.sql           <- DDL del esquema estrella
 │   └── carga_dimensiones_hechos.py             <- Pipeline E-L-T (carga a PostgreSQL)
 ├── data/
 │   ├── adquisicion_medicamentos.csv            <- Dataset crudo original
@@ -74,7 +73,7 @@ Abrir `notebooks/eda_y_limpieza_contrataciones.ipynb` en Jupyter/VS Code y ejecu
 ### Paso 3 — Crear esquema estrella en PostgreSQL
 
 ```powershell
-psql -U postgres -d uteq_data_mining -f database\tablas\esquema_estrella_postgres.sql
+psql -U postgres -d uteq_data_mining -f database\esquema_estrella_postgres.sql
 ```
 
 ### Paso 4 — Cargar dimensiones y hechos
