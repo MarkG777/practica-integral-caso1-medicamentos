@@ -135,8 +135,7 @@ El split 75/25 se genera con `train_test_split(..., stratify=y)` garantizando qu
 
 ## 8. Autores
 
-- Marco Antonio Gómez Olvera
-- [Nombre del colaborador]
+- **Marco Antonio Gómez Olvera** — [@MarkG777](https://github.com/MarkG777)
 
 ---
 
